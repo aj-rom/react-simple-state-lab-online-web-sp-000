@@ -47,8 +47,9 @@ describe('<Cell />', () => {
   })
 
   it("has an event listener that, when clicked, calls this.setState() once (make sure you aren't setting state directly, but instead using the component's 'setState' method)", () => {
-    const setState = sinon.spy(Cell.prototype, 'setState');
+    const setState = sinon.spy(cellWhite, 'setState');
     cellWhite.find('div').simulate('click')
+    console.log('State', setState.calledOnce)
     expect(setState.calledOnce).to.equal(true);
   })
 
